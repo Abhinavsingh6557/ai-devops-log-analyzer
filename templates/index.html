@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DevOps Log Analyzer</title>
+
+    <style>
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #38bdf8;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0ea5e9;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        }
+
+        .log-title {
+            color: #facc15;
+        }
+
+        .analysis-title {
+            color: #4ade80;
+        }
+
+        .log-box {
+            background-color: #334155;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI DevOps Log Analyzer</h1>
+
+        <p class="subtitle">
+            Monitor and analyze DevOps logs using AI
+        </p>
+
+        <div class="btn-container">
+            <a href="/generate-log">
+                <button>Generate Log</button>
+            </a>
+        </div>
+
+        {% if log %}
+        <div class="card">
+
+            <h2 class="log-title">Generated Log</h2>
+
+            <div class="log-box">
+                {{ log }}
+            </div>
+
+        </div>
+        {% endif %}
+
+        {% if analysis %}
+        <div class="card">
+
+            <h2 class="analysis-title">AI Analysis</h2>
+
+            <pre>{{ analysis }}</pre>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
