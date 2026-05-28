@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Abhinavsingh6557/ai-devops-log-analyzer.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t ai-devops-log-analyzer .'
