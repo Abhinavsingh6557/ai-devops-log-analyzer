@@ -5,15 +5,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t ai-devops-log-analyzer .'
+                sh 'docker build -t ai-devops-log-analyzer .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker stop ai-container || exit 0'
-                bat 'docker rm ai-container || exit 0'
-                bat 'docker run -d -p 5000:5000 --name ai-container ai-devops-log-analyzer'
+                sh 'docker stop ai-container || true'
+                sh 'docker rm ai-container || true'
+                sh 'docker run -d -p 5000:5000 --name ai-container ai-devops-log-analyzer'
             }
         }
     }
